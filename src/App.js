@@ -1,21 +1,26 @@
 import './App.css';
-import Board from './components/Board';
 import "./App.css"
+import { Link, Route, Routes } from 'react-router-dom';
+import Stack from './components/Stack';
 import Queue from './components/Queue';
 
 function App() {
   return (
     <div className="App">
       <div className='sidebar'>
-        <h2>
-          Queue
-        </h2>
+        <Link to="/"><h1>Stack</h1></Link>
+        <Link to="/queue"><h1>Queue</h1></Link>
       </div>
       <div className='majority'>
-        <Queue></Queue>
+        <Routes>
+          <Route path="/" element={<Stack/>}/>
+          <Route path="/queue" element={<Queue/>}/>
+        </Routes>
       </div>
 
     </div>
+
+
   );
 }
 

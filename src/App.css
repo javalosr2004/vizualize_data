@@ -12,11 +12,13 @@
 
 .sidebar{
   display:flex;
+  flex-direction: column;
   align-items: start;
   width: 15%;
   height: 100vh;
   border-right: 1px solid black;
 }
+
 
 @media screen and (max-width: 800px){
   .sidebar{
@@ -24,11 +26,15 @@
   }
 }
 
-.sidebar h2{
+.sidebar a{
   padding-left: 10px;
 }
 
-.sidebar h2:hover{
+.sidebar a:visited:hover{
   color: orange;
   cursor: pointer;
+}
+
+.sidebar a:visited{
+  color:black;
 }

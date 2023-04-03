@@ -3,12 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { createBrowserRouter, RouterProvider, } from "react-router-dom"
+import Queue from './components/Queue';
+import Stack from './components/Stack';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>
+    element: <App/>,
+    children: [
+      {
+        path: "/queue",
+        element: <Queue/>
+      },
+      {
+        path: "/stack",
+        element: <Stack/>
+      },
+    ]
   },
+
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
