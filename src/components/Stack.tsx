@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import {CenterDiv, CenterDivRow, Rectangle, Dot, StyledButton} from './styles.jsx'
+import {CenterDiv, CenterDivRow, Rectangle, Dot, StyledButton} from './styles'
 import "./custom.css"
 
 
 // LIFO - Last In First Out
 function Stack(){
 
-    const [ stack, setStack] = useState([0]);
+    const [ stack, setStack] = useState<(string|number)[]>([0]);
     const [ inputValue, setInputValue ] = useState("");
 
 
     // queue = [new_element, ...queue]
-    function enqueue(val){
+    function enqueue(val: string | number){
         if (val){
             setInputValue("");
             setStack([val, ...stack]);
@@ -38,7 +38,7 @@ function Stack(){
     <CenterDiv>
         <CenterDivRow>{returnStack()}</CenterDivRow>
         <div id="submit_form">
-            <input maxLength="9" value={inputValue} onChange={e => setInputValue(e.target.value)}></input>
+            <input maxLength={9} value={inputValue} onChange={e => setInputValue(e.target.value)}></input>
             <div>
                 <StyledButton onClick={() => enqueue(inputValue)}>Add</StyledButton>
                 <StyledButton onClick={dequeue}>Remove</StyledButton>

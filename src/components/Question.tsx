@@ -1,5 +1,5 @@
 
-function Question(props){
+function Question(props: any){
 
     return (
         <div>

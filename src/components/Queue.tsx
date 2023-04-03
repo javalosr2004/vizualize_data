@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {CenterDiv, CenterDivRow, Rectangle, Dot, StyledButton} from './styles.jsx'
+import {CenterDiv, CenterDivRow, Rectangle, Dot, StyledButton} from './styles'
 import "./custom.css"
 
 
@@ -9,14 +9,14 @@ function Queue(){
     const [ queue, setQueue] = useState([0]);
     const [ inputValue, setInputValue ] = useState("");
 
-    function onEnter(key){
+    function onEnter(key: any){
         if (key == 'Enter'){
             enqueue(inputValue);
         }
     }
 
     // queue = [new_element, ...queue]
-    function enqueue(val){
+    function enqueue(val: any){
         if (val){
             setInputValue("");
             setQueue([val, ...queue]);
@@ -46,9 +46,9 @@ function Queue(){
     <CenterDiv>
         <CenterDivRow>{returnStack()}</CenterDivRow>
         <div id="submit_form">
-            <input maxLength="9" value={inputValue} onChange={e => setInputValue(e.target.value)}></input>
+            <input maxLength={9} value={inputValue} onChange={e => setInputValue(e.target.value)}></input>
             <div>
-                <StyledButton onKeyDown={e => onEnter(e.key)} onClick={() => enqueue(inputValue)}>Enqueue</StyledButton>
+                <StyledButton onClick={() => enqueue(inputValue)}>Enqueue</StyledButton>
                 <StyledButton onClick={dequeue}>Dequeue</StyledButton>
             </div>
         </div>

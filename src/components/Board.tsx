@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import {CenterDiv, CenterDivRow, Rectangle, Dot, StyledButton} from './styles.jsx'
+import {CenterDiv, CenterDivRow, Rectangle, Dot, StyledButton} from './styles'
 
-function Board(props){
+function Board(props: any){
 
     const [ count, setCount ] = useState(1);
 
     // return the amount in the queue/enque (array) added
-    function returnStack(count){
+    function returnStack(count: any){
         let stack = [];
         for (let i = 0; i < count; i++){
             stack.push(<Rectangle>{"Stack " + i}</Rectangle>)
@@ -15,7 +15,7 @@ function Board(props){
     }
     
     // return the amount of nodes added
-    function returnNodes(count){
+    function returnNodes(count: any){
         let nodes = [];
         for (let i = 0; i < count; i++){
             nodes.push(<Dot>{"Node " + i}</Dot>)
