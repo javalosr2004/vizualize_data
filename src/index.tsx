@@ -5,6 +5,7 @@ import App from './App';
 import { createBrowserRouter, RouterProvider, } from "react-router-dom"
 import Queue from './components/Queue';
 import Stack from './components/Stack';
+import Deque from './components/Deque';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         path: "/stack",
         element: <Stack/>
       },
+      {
+        path: "/deque",
+        element: <Deque/>
+      }
     ]
   },
 

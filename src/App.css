@@ -28,6 +28,7 @@
 
 .sidebar a{
   padding-left: 10px;
+  color:black;
 }
 
 .sidebar a:visited:hover{
